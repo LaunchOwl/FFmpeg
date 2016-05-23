@@ -1976,7 +1976,7 @@ static void compute_status(HTTPContext *c)
             }
         }
 
-        avio_printf(pb, "<tr><td><a href=\"/%s\">%s</a> ",
+        avio_printf(pb, "<tr><td><a class=\"stream-name\" href=\"/%s\">%s</a> ",
                     sfilename, stream->filename);
         avio_printf(pb, "<td align=right> %d <td align=right> ",
                     stream->conns_served);
@@ -2118,7 +2118,7 @@ static void compute_status(HTTPContext *c)
 
         i++;
         p = inet_ntoa(c1->from_addr.sin_addr);
-        avio_printf(pb, "<tr><td><b>%d</b><td>%s%s<td>%s<td>%s<td>%s"
+        avio_printf(pb, "<tr><td><b>%d</b><td><span class=\"connection-name\">%s</span>%s<td>%s<td>%s<td>%s"
                         "<td align=right>",
                     i, c1->stream ? c1->stream->filename : "",
                     c1->state == HTTPSTATE_RECEIVE_DATA ? "(input)" : "", p,
